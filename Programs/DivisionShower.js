@@ -1,3 +1,5 @@
+// Print Student Division according to his marks
+
 const obtainedMarks = 59;
 
 if (obtainedMarks >= 60) {
