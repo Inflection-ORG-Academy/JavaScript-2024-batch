@@ -1,0 +1,129 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relation App UI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="form-card">
+      <h1>Relation Status</h1>
+      <div>
+        <label>Your Name<sup>*</sup></label>
+        <input type="text" placeholder="Enter your name" id="Yname" />
+      </div>
+      <div>
+        <label>Friend Name<sup>*</sup></label>
+        <input type="text" placeholder="Enter your friend name" id="FrName" />
+      </div>
+      <button onclick="see()">See</button>
+      <h2 id="result"></h2>
+    </div>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Montserrat', system-ui;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      sup {
+        color: rgb(255, 0, 43);
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      button {
+        border: none;
+        padding: 20px 40px;
+        background-color: rgb(255, 27, 65);
+        color: white;
+        border-radius: 12px;
+        font-size: 20px;
+      }
+
+      input {
+        width: 100%;
+        outline: none;
+        border: 2px solid black;
+        border-radius: 6px;
+        height: 40px;
+        padding: 0px 12px;
+        font-size: 18px;
+        font-weight: 500;
+        transition: all 0.5s;
+      }
+      input:focus {
+        border: 2px solid rgb(255, 27, 65);
+      }
+
+      .form-card {
+        width: 50%;
+        display: grid;
+        gap: 20px;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 2px 2px 30px rgb(221, 197, 201);
+      }
+
+      @media (max-width: 600px) {
+        .form-card {
+          width: 90%;
+        }
+      }
+    </style>
+
+    <script>
+      function see() {
+        const inputsArr = document.getElementsByTagName('input');
+
+        const yNameEl = inputsArr[0].value;
+        const frNameEl = inputsArr[1].value;
+
+        if (!yNameEl || !frNameEl) {
+          alert('Please Input Something');
+          return;
+        }
+
+        const heading2 = document.getElementById('result');
+
+        //   Generating Random Number between 0 - 10
+        const rnum = Math.random() * 100;
+        if (rnum > 50) {
+          heading2.innerHTML =
+            Math.ceil(rnum) +
+            '% ' +
+            yNameEl +
+            ' and ' +
+            frNameEl +
+            ' are Best Friend💑♥';
+        } else {
+          heading2.innerHTML =
+            Math.ceil(rnum) +
+            '% ' +
+            yNameEl +
+            ' and ' +
+            frNameEl +
+            ' are Only Friend🤦‍♂️😢';
+        }
+
+        inputsArr[0].value = '';
+        inputsArr[1].value = '';
+      }
+    </script>
+  </body>
+</html>
