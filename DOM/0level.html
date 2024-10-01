@@ -1,0 +1,22 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Basics</title>
+  </head>
+  <body>
+    <h1 id="title">Prabhat Seth</h1>
+    <button onclick="changeName()">Change Name</button>
+    <script>
+      function changeName() {
+        const headEl = document.getElementById('title');
+        headEl.innerHTML = 'Rishikesh Maurya';
+
+        const h2El = document.createElement('h2');
+        h2El.innerHTML = 'I am created By JS';
+
+        document.body.appendChild(h2El);
+      }
+    </script>
+  </body>
+</html>
