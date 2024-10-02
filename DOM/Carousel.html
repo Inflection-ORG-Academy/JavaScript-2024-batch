@@ -1,0 +1,54 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carousel</title>
+  </head>
+  <body>
+    <img
+      id="myImage"
+      src="https://rukminim2.flixcart.com/fk-p-flap/1000/170/image/4699031e995aa360.jpg?q=20"
+    />
+    <!-- <button onclick="changeImage()">Change</button> -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      img {
+        width: 100%;
+      }
+    </style>
+
+    <script>
+      const images = [
+        'https://rukminim2.flixcart.com/fk-p-flap/1000/170/image/4699031e995aa360.jpg?q=20',
+        'https://rukminim2.flixcart.com/fk-p-flap/1000/170/image/9584a6435e23c616.jpg?q=20',
+        'https://images-eu.ssl-images-amazon.com/images/G/31/img24/Wireless/Madhav/jupiter24/Iphone/40749/PC_Hero_3000x1200._CB562612976_.jpg',
+        'https://images-eu.ssl-images-amazon.com/images/G/31/Events/img24/Jupiter24/HERO1/J24_GW_PC_EventHero_Shop-Now_Static_2X._CB562511593_.jpg',
+        'https://images-eu.ssl-images-amazon.com/images/G/31/img23/PB/March/Bikram/PC_Hero_3000x1200_Lifestyle_KITCHEN._CB562081009_.jpg',
+        'https://images-eu.ssl-images-amazon.com/images/G/31/img23/Toys/Sakshi/Jupiter1/PC_Hero_3000x1200-Gifting._CB562625313_.jpg',
+        'https://images-eu.ssl-images-amazon.com/images/G/31/img22/vernac-t/header/PC_Hero_3000x1200_Toddler_1._CB562359921_.jpg',
+        'https://images-eu.ssl-images-amazon.com/images/G/31/img21/MA2024/GW/Jupiter/D1/PC/9-1._CB562161164_.jpg',
+        'https://images-eu.ssl-images-amazon.com/images/G/31/img18/HomeImprovement/Jupiter/Phase1/Day3/Heros/3000x1200._CB562721460_.jpg',
+        'https://images-eu.ssl-images-amazon.com/images/G/31/img24/lap/gw/pea/2/top20-PC_Hero_3000x1200._CB562549334_.jpg',
+      ];
+
+      const imgEl = document.getElementById('myImage');
+
+      let index = 0;
+      function changeImage() {
+        index = index + 1;
+        if (index > images.length - 1) {
+          index = 0;
+        }
+        console.log(index);
+        imgEl.src = images[index];
+      }
+
+      setInterval(changeImage, 9000);
+    </script>
+  </body>
+</html>
